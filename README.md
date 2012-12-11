@@ -8,7 +8,7 @@ I'm a lazy person and so it hurts me when I have to write so much to do such com
 
 First, using vanilla libdispatch:
 
-```c
+```cc
 dispatch_queue_t parentQueue = dispatch_get_current_queue();
 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
   NSLog(@"Block #1 on queue '%s' (parentQueue: '%s')",
@@ -31,7 +31,7 @@ dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 
 Now, with LazyDispatch:
 
-```m
+```cc
 sched_background ^(DQueue parentQueue){
   NSLog(@"Block #1 on queue '%s' (parentQueue: '%s')",
         DQueueID(__queue), DQueueID(parentQueue));
