@@ -65,7 +65,7 @@ sched_delay(1, ^{
 Just like e.g. JavaScript, timers can be cancelled:
 
 ```objc
-DTimer timer = sched_interval(1, ^{
+DTimer timer = sched_interval(13.37, ^{
   NSLog(@"Delayed block sez hi");
 });
 //...
