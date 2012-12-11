@@ -74,7 +74,7 @@ expression is the block itself.
 
 ### Functions
 
-#### `const char* DQueueID(DQueue queue)`
+#### const char* DQueueID(DQueue queue)
 
 Access the human-readable identifier of `queue` (its "label")
 
