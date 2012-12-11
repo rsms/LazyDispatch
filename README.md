@@ -46,7 +46,7 @@ sched_background ^(DQueue parentQueue){
 };
 ```
 
-See, way simpler yet same performance as no actual overhead is added. We just rephrased things to be a little more readable.
+See. Way simpler yet same performance as no actual overhead is added. We just rephrased things to be a little more readable.
 
 Output:
 
