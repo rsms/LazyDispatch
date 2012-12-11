@@ -46,15 +46,13 @@ sched_background ^(DQueue parentQueue){
 };
 ```
 
-See. Way simpler yet same performance as no actual overhead is added. We just rephrased things to be a little more readable.
-
-Output:
-
     Block #1 on queue 'com.apple.root.default-priority' (parentQueue: 'com.apple.main-thread')
     Block #2 on queue 'com.apple.main-thread'
     Block #3 on queue 'com.apple.root.default-priority'
 
-Wow! I can haz so much fun nows!
+See. Way simpler yet same performance as no actual overhead is added. We just rephrased things to be a little more readable.
+
+*Wow! I can haz so much fun nows!*
 
 There are also timers. We love them timers, don't we?!
 
