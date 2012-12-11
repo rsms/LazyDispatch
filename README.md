@@ -6,6 +6,31 @@ I'm a lazy person and so it hurts me when I have to write so much to do such com
 
 ### Example
 
+First, using vanilla libdispatch:
+
+```m
+dispatch_queue_t parentQueue = dispatch_get_current_queue();
+dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+  NSLog(@"Block #1 on queue '%s' (parentQueue: '%s')",
+        dispatch_queue_get_label(dispatch_get_current_queue()),
+        dispatch_queue_get_label(parentQueue));
+  
+  dispatch_queue_t parentQueue2 = dispatch_get_current_queue();
+  dispatch_async(dispatch_get_main_queue(), ^{
+    NSLog(@"Block #2 on queue '%s'",
+          dispatch_queue_get_label(dispatch_get_current_queue()));
+    
+    dispatch_async(parentQueue2, ^{
+      NSLog(@"Block #3 on queue '%s'",
+            dispatch_queue_get_label(dispatch_get_current_queue()));
+      exit(0);
+    });
+  });
+});
+```
+
+Now, with LazyDispatch:
+
 ```m
 sched_background ^(DQueue parentQueue){
   NSLog(@"Block #1 on queue '%s' (parentQueue: '%s')",
@@ -20,6 +45,8 @@ sched_background ^(DQueue parentQueue){
   };
 };
 ```
+
+See, way simpler yet same performance as no actual overhead is added. We just rephrased things to be a little more readable.
 
 Output:
 
