@@ -33,13 +33,13 @@ Wow! I can haz so much fun nows!
 
 ### Types (typedef's)
 
-- `DQueue` -- alias for dispatch_queue_t
-- `DBlock` -- alias for dispatch_block_t
+- `DQueue` — alias for dispatch_queue_t
+- `DBlock` — alias for dispatch_block_t
 
 ### Special variables
 
-- `__queue` -- The current queue (a `DQueue`.)
-- `__main_queue` -- The main queue (a `DQueue`.)
+- `__queue` — The current queue (a `DQueue`.)
+- `__main_queue` — The main queue (a `DQueue`.)
 
 ### Keyword expressions
 
