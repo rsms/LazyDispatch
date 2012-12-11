@@ -110,7 +110,7 @@ Schedules a block in the main queue. The block can optionally accept an argument
 which will be the queue from which `sched_main` was called. The result of the
 expression is the block itself.
 
-#### sched(DQueue queue) ^([DQueue parentQueue]) → block
+#### `sched(DQueue queue) ^([DQueue parentQueue]) → block`
 
 Schedules a block in a `queue`. The block can optionally accept an argument
 which will be the queue from which `sched` was called. The result of the
