@@ -31,7 +31,7 @@ dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 
 Now, with LazyDispatch:
 
-```m
+```mm
 sched_background ^(DQueue parentQueue){
   NSLog(@"Block #1 on queue '%s' (parentQueue: '%s')",
         DQueueID(__queue), DQueueID(parentQueue));
