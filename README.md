@@ -31,7 +31,7 @@ Wow! I can haz so much fun nows!
 
 ## API
 
-### Types (typedef's)
+### Types
 
 - `DQueue` — alias for dispatch_queue_t
 - `DBlock` — alias for dispatch_block_t
