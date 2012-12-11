@@ -33,17 +33,17 @@ Wow! I can haz so much fun nows!
 
 ### Types
 
-- `DQueue` — alias for dispatch_queue_t
-- `DBlock` — alias for dispatch_block_t
+- `DQueue` — alias for `dispatch_queue_t`
+- `DBlock` — alias for `dispatch_block_t`
 
 ### Special variables
 
-- `__queue` — The current queue (a `DQueue`.)
-- `__main_queue` — The main queue (a `DQueue`.)
+- `__queue` → `DQueue` — The current queue
+- `__main_queue` → `DQueue` — The main queue
 
 ### Keyword expressions
 
-#### sched_background block([DQueue parentQueue]) -> block
+#### sched_background block([DQueue parentQueue]) → block
 
 Schedules `block` in the background queue. The block can optionally accept an
 argument which will be the queue from which `sched_background` was called.
@@ -60,13 +60,13 @@ Useful for invoking callbacks and returning control to the same queue, e.g:
 }
 ```
 
-#### sched_main block([DQueue parentQueue]) -> block
+#### sched_main block([DQueue parentQueue]) → block
 
 Schedules `block` in the main queue. The block can optionally accept an argument
 which will be the queue from which `sched_main` was called. The result of the
 expression is the block itself.
 
-#### sched(DQueue queue) block([DQueue parentQueue]) -> block
+#### sched(DQueue queue) block([DQueue parentQueue]) → block
 
 Schedules `block` in a `queue`. The block can optionally accept an argument
 which will be the queue from which `sched` was called. The result of the
