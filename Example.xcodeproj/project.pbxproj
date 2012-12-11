@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6A04F9F01676D13300724704 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A04F9EF1676D13300724704 /* Foundation.framework */; };
-		6A04F9F31676D13300724704 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A04F9F21676D13300724704 /* main.m */; };
-		6A04F9F71676D13300724704 /* LazyDispatch.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6A04F9F61676D13300724704 /* LazyDispatch.1 */; };
+		6A04F9FE1676D16200724704 /* example.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A04F9FD1676D16200724704 /* example.m */; };
+		6A04FA011676D17200724704 /* LazyDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A04FA001676D17200724704 /* LazyDispatch.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -19,18 +19,17 @@
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
-				6A04F9F71676D13300724704 /* LazyDispatch.1 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6A04F9EB1676D13300724704 /* LazyDispatch */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LazyDispatch; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A04F9EB1676D13300724704 /* Example */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Example; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A04F9EF1676D13300724704 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		6A04F9F21676D13300724704 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6A04F9F51676D13300724704 /* LazyDispatch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LazyDispatch-Prefix.pch"; sourceTree = "<group>"; };
-		6A04F9F61676D13300724704 /* LazyDispatch.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = LazyDispatch.1; sourceTree = "<group>"; };
+		6A04F9FD1676D16200724704 /* example.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = example.m; sourceTree = SOURCE_ROOT; };
+		6A04F9FF1676D17200724704 /* LazyDispatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LazyDispatch.h; sourceTree = SOURCE_ROOT; };
+		6A04FA001676D17200724704 /* LazyDispatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LazyDispatch.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +56,7 @@
 		6A04F9EC1676D13300724704 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6A04F9EB1676D13300724704 /* LazyDispatch */,
+				6A04F9EB1676D13300724704 /* Example */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,27 +72,19 @@
 		6A04F9F11676D13300724704 /* LazyDispatch */ = {
 			isa = PBXGroup;
 			children = (
-				6A04F9F21676D13300724704 /* main.m */,
-				6A04F9F61676D13300724704 /* LazyDispatch.1 */,
-				6A04F9F41676D13300724704 /* Supporting Files */,
+				6A04F9FF1676D17200724704 /* LazyDispatch.h */,
+				6A04FA001676D17200724704 /* LazyDispatch.m */,
+				6A04F9FD1676D16200724704 /* example.m */,
 			);
 			path = LazyDispatch;
-			sourceTree = "<group>";
-		};
-		6A04F9F41676D13300724704 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				6A04F9F51676D13300724704 /* LazyDispatch-Prefix.pch */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6A04F9EA1676D13300724704 /* LazyDispatch */ = {
+		6A04F9EA1676D13300724704 /* Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6A04F9FA1676D13300724704 /* Build configuration list for PBXNativeTarget "LazyDispatch" */;
+			buildConfigurationList = 6A04F9FA1676D13300724704 /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
 				6A04F9E71676D13300724704 /* Sources */,
 				6A04F9E81676D13300724704 /* Frameworks */,
@@ -103,9 +94,9 @@
 			);
 			dependencies = (
 			);
-			name = LazyDispatch;
+			name = Example;
 			productName = LazyDispatch;
-			productReference = 6A04F9EB1676D13300724704 /* LazyDispatch */;
+			productReference = 6A04F9EB1676D13300724704 /* Example */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -117,7 +108,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Rasmus Andersson";
 			};
-			buildConfigurationList = 6A04F9E51676D13300724704 /* Build configuration list for PBXProject "LazyDispatch" */;
+			buildConfigurationList = 6A04F9E51676D13300724704 /* Build configuration list for PBXProject "Example" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -129,7 +120,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6A04F9EA1676D13300724704 /* LazyDispatch */,
+				6A04F9EA1676D13300724704 /* Example */,
 			);
 		};
 /* End PBXProject section */
@@ -139,7 +130,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A04F9F31676D13300724704 /* main.m in Sources */,
+				6A04F9FE1676D16200724704 /* example.m in Sources */,
+				6A04FA011676D17200724704 /* LazyDispatch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,25 +194,21 @@
 		6A04F9FB1676D13300724704 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LazyDispatch/LazyDispatch-Prefix.pch";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Example;
 			};
 			name = Debug;
 		};
 		6A04F9FC1676D13300724704 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LazyDispatch/LazyDispatch-Prefix.pch";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Example;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6A04F9E51676D13300724704 /* Build configuration list for PBXProject "LazyDispatch" */ = {
+		6A04F9E51676D13300724704 /* Build configuration list for PBXProject "Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6A04F9F81676D13300724704 /* Debug */,
@@ -229,13 +217,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6A04F9FA1676D13300724704 /* Build configuration list for PBXNativeTarget "LazyDispatch" */ = {
+		6A04F9FA1676D13300724704 /* Build configuration list for PBXNativeTarget "Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6A04F9FB1676D13300724704 /* Debug */,
 				6A04F9FC1676D13300724704 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
