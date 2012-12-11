@@ -87,7 +87,7 @@ DTimerStop(timer);
 
 ### Keyword expressions
 
-#### sched_background ^([DQueue parentQueue]) → block
+#### `sched_background ^([DQueue parentQueue]) → block`
 
 Schedules a block in the background queue. The block can optionally accept an
 argument which will be the queue from which `sched_background` was called.
@@ -104,7 +104,7 @@ Useful for invoking callbacks and returning control to the same queue, e.g:
 }
 ```
 
-#### sched_main ^([DQueue parentQueue]) → block
+#### `sched_main ^([DQueue parentQueue]) → block`
 
 Schedules a block in the main queue. The block can optionally accept an argument
 which will be the queue from which `sched_main` was called. The result of the
@@ -118,11 +118,11 @@ expression is the block itself.
 
 ### Functions
 
-#### const char* DQueueID(DQueue queue)
+#### `const char* DQueueID(DQueue queue)`
 
 Access the human-readable identifier of `queue` (its "label")
 
-#### DTimer sched_delay(NSTimeInterval delay, ^([DTimer[, DQueue]]))
+#### `DTimer sched_delay(NSTimeInterval delay, ^([DTimer[, DQueue]]))`
 
 Schedule a block to in the current queue to execute after `delay` seconds. You can call `DTimerStop` on the `DTimer` object (returned from this function) to cancel a timer before it has triggered.
 
@@ -135,7 +135,7 @@ sched_delay(1, ^{
 });
 ```
 
-#### DTimer sched_interval(NSTimeInterval interval, ^([DTimer[, DQueue]]))
+#### `DTimer sched_interval(NSTimeInterval interval, ^([DTimer[, DQueue]]))`
 
 Schedule a block to in the current queue to be executed every `interval` seconds. You are responsible for calling `DTimerStop(timer)` when the timer is no longer needed.
 
@@ -148,7 +148,7 @@ sched_interval(1.1, ^{
 });
 ```
 
-#### DTimer sched_timer(DQueue queue, NSTimeInterval delay, NSTimeInterval interval, ^([DTimer[, DQueue]]))
+#### `DTimer sched_timer(DQueue queue, NSTimeInterval delay, NSTimeInterval interval, ^([DTimer[, DQueue]]))`
 
 Schedule a timer on `queue` which starts after `delay` seconds and repeats with `interval`.
 
@@ -163,7 +163,7 @@ sched_timer(fooQueue, 1.5, 3.5, ^(DTimer timer){
 });
 ```
 
-#### DTimer DTimerCreate(DQueue queue, NSTimeInterval delay, NSTimeInterval interval, ^([DTimer[, DQueue]]))
+#### `DTimer DTimerCreate(DQueue queue, NSTimeInterval delay, NSTimeInterval interval, ^([DTimer[, DQueue]]))`
 
 Like `sched_timer` but only creates a timer (does not schedule it). You need to call `DTimerResume` in order to schedule the timer.
 
@@ -177,17 +177,17 @@ DTimer timer = DTimerCreate(fooQueue, 1.5, 3.5, ^(DTimer timer){
 DTimerResume(timer);
 ```
 
-#### DTimer DTimerResume(DTimer timer)
+#### `DTimer DTimerResume(DTimer timer)`
 
 Schedule a timer that is not yet scheduled (has been paused by `DTimerPause` or just created by `DTimerCreate`.)
 
 Each call to `DTimerResume` must balance a call to `DTimerPause`, or there will be violent memory violations that will crash all the things. This is a property of libdispatch, trading tolerance of use for efficiency. Note that the timers returned from `sched_delay`, `sched_interval` and `sched_timer` are already resumed.
 
-#### DTimer DTimerPause(DTimer timer)
+#### `DTimer DTimerPause(DTimer timer)`
 
 Unschedule a timer that has been scheduled. When pausing a timer and later resuming it, the trigger time does *not* adjust for the time which during the timer was paused.
 
-#### DTimer DTimerSetInterval(DTimer timer, NSTimeInterval interval)
+#### `DTimer DTimerSetInterval(DTimer timer, NSTimeInterval interval)`
 
 Modify and reset the interval of a timer.
 
@@ -207,7 +207,7 @@ sched_interval(1.0, ^(DTimer timer){
 });
 ```
 
-#### void DTimerStop(DTimer timer)
+#### `void DTimerStop(DTimer timer)`
 
 Cancellation prevents any further invocation of the handler block for the specified timer, but does not interrupt a handler block that is already executing.
 
