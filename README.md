@@ -51,12 +51,14 @@ The result of the expression is the block itself.
 
 Useful for invoking callbacks and returning control to the same queue, e.g:
 
-    - (void)doSomethingFunkyWithCallback:(DBlock)callback {
-      sched_background ^(DQueue parentQueue){
-        // work work work ...
-        sched(parentQueue) callback;
-      };
-    }
+```m
+- (void)doSomethingFunkyWithCallback:(DBlock)callback {
+  sched_background ^(DQueue parentQueue){
+    // work work work ...
+    sched(parentQueue) callback;
+  };
+}
+```
 
 #### sched_main block([DQueue parentQueue]) -> block
 
