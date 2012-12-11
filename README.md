@@ -31,7 +31,7 @@ dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 
 Now, with LazyDispatch:
 
-```cc
+```objc
 sched_background ^(DQueue parentQueue){
   NSLog(@"Block #1 on queue '%s' (parentQueue: '%s')",
         DQueueID(__queue), DQueueID(parentQueue));
@@ -78,7 +78,7 @@ The result of the expression is the block itself.
 
 Useful for invoking callbacks and returning control to the same queue, e.g:
 
-```m
+```objc
 - (void)doSomethingFunkyWithCallback:(DBlock)callback {
   sched_background ^(DQueue parentQueue){
     // work work work ...
