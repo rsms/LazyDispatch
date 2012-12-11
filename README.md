@@ -124,7 +124,7 @@ Access the human-readable identifier of `queue` (its "label")
 
 #### `DTimer sched_delay(NSTimeInterval delay, ^([DTimer[, DQueue]]))`
 
-Schedule a block to in the current queue to execute after `delay` seconds. You can call `DTimerStop` on the `DTimer` object (returned from this function) to cancel a timer before it has triggered.
+Schedule a block in the current queue to execute after `delay` seconds. You can call `DTimerStop` on the `DTimer` object (returned from this function) to cancel a timer before it has triggered.
 
 Example:
 
@@ -137,7 +137,7 @@ sched_delay(1, ^{
 
 #### `DTimer sched_interval(NSTimeInterval interval, ^([DTimer[, DQueue]]))`
 
-Schedule a block to in the current queue to be executed every `interval` seconds. You are responsible for calling `DTimerStop(timer)` when the timer is no longer needed.
+Schedule a block in the current queue to be executed every `interval` seconds. You are responsible for calling `DTimerStop(timer)` when the timer is no longer needed.
 
 Example:
 
